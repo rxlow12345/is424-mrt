@@ -1,6 +1,6 @@
 # MRT crowd-density logger
 
-Collects LTA DataMall PCDRealTime observations every 30 minutes, at minutes 07 and 37 of each hour (UTC; also 07 and 37 in Singapore). Python 3.12's standard library is sufficient; no packages to install.
+Collects LTA DataMall PCDRealTime observations every 30 minutes, at minutes 07 and 37 of each hour (UTC; also 00 and 30 in Singapore). Python 3.12's standard library is sufficient; no packages to install.
 
 ## Repository layout
 
@@ -30,7 +30,7 @@ All 11 documented MRT/LRT line codes are queried, including extensions. Edit LIN
 
 Exact repeats are skipped using station, interval, crowd level, and line. A changed crowd level for the same interval is retained as a separate observation; analysis should use CollectedAt to choose the latest version when needed. Only the CSV is staged for the bot commit. Workflow runs are serialized; a concurrent conflicting human edit can still cause a visible failed push/rebase.
 
-This builds history from activation onward. A 30-minute sample misses some 10-minute API intervals; it cannot recover observations from missed runs. Change cron to `7,17,27,37,47,57 * * * *` for a 10-minute target, with more Actions usage and commits. Monitor Actions usage/billing, run failures, CSV growth, and gaps. Scheduled runs can be delayed or dropped, run only from the default branch, and public-repository schedules may be disabled after 60 days without repository activity.
+This builds history from activation onward. A 30-minute sample misses some 10-minute API intervals; it cannot recover observations from missed runs. Change cron to `0,10,20,30,40,50 * * * *` for a 10-minute target, with more Actions usage and commits. Monitor Actions usage/billing, run failures, CSV growth, and gaps. Scheduled runs can be delayed or dropped, run only from the default branch, and public-repository schedules may be disabled after 60 days without repository activity.
 
 ## Sources
 
