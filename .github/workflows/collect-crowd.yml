@@ -32,6 +32,7 @@ jobs:
           LTA_ACCOUNT_KEY: ${{ secrets.LTA_ACCOUNT_KEY }}
         run: python scripts/log_crowd_density.py
 
+
       - name: Commit updated CSV
         env:
           DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
@@ -45,11 +46,7 @@ jobs:
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "data: append MRT crowd observations"
-          git pull --rebase origin "$DEFAULT_BRANCH"
-          git push origin "HEAD:$DEFAULT_BRANCH"
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git commit -m "data: append MRT crowd observations"
           git pull --rebase origin "$DEFAULT_BRANCH"
           git push origin "HEAD:$DEFAULT_BRANCH"
