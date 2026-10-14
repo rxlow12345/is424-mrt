@@ -48,5 +48,17 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git commit -m "data: append MRT crowd observations"
-          git pull --rebase origin "$DEFAULT_BRANCH"
-          git push origin "HEAD:$DEFAULT_BRANCH"
+                    for attempt in 1 2 3 4; do
+            if git pull --rebase origin "$DEFAULT_BRANCH" &&
+               git push origin "HEAD:$DEFAULT_BRANCH"; then
+              exit 0
+            fi
+
+            if [ "$attempt" -lt 4 ]; then
+              echo "Save failed; retrying in 15 seconds."
+              sleep 15
+            fi
+          done
+
+          echo "Unable to save CSV after four attempts."
+          exit 1
