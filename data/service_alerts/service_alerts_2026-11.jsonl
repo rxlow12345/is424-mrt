@@ -234,3 +234,4 @@
 {"CollectedAt": "2026-11-01T19:26:26+08:00", "Response": {"odata.metadata": "https://datamall2.mytransport.sg/ltaodataservice/$metadata#TrainServicesAlerts", "value": {"Status": 1, "AffectedSegments": [], "Message": []}}}
 {"CollectedAt": "2026-11-01T19:31:39+08:00", "Response": {"odata.metadata": "https://datamall2.mytransport.sg/ltaodataservice/$metadata#TrainServicesAlerts", "value": {"Status": 1, "AffectedSegments": [], "Message": []}}}
 {"CollectedAt": "2026-11-01T19:36:25+08:00", "Response": {"odata.metadata": "https://datamall2.mytransport.sg/ltaodataservice/$metadata#TrainServicesAlerts", "value": {"Status": 1, "AffectedSegments": [], "Message": []}}}
+{"CollectedAt": "2026-11-01T19:41:00+08:00", "Response": {"odata.metadata": "https://datamall2.mytransport.sg/ltaodataservice/$metadata#TrainServicesAlerts", "value": {"Status": 1, "AffectedSegments": [], "Message": []}}}
